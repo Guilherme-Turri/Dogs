@@ -16,17 +16,18 @@ const UserStats = () => {
     }
     getData();
   }, [request]);
+  console.log(data);
 
   if (loading) return <Loading />;
   if (error) return <Erro error={error} />;
-  if (data)
+  if (data !== null && data.length > 0)
     return (
       <React.Suspense fallback={<div></div>}>
         <Head title="Estatísticas" />
         <UserStatsGraph data={data} />
       </React.Suspense>
     );
-  else return null;
+  else return <p className="animeLeft">Você ainda não possui postagens.</p>;
 };
 
 export default UserStats;
