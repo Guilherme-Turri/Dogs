@@ -4,6 +4,7 @@ import Head from '../../Helper/Head';
 import Feed from '../Feed/Feed';
 const UserProfile = () => {
   const { user } = useParams();
+  console.log('djioa');
   return (
     <section className="container mainSection">
       <Head title={user} />
